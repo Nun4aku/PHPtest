@@ -22,7 +22,7 @@
             echo'
                                 <div>
                                     <div style="font-size: 12px;">'.$pablic_or_private.'</div>
-                                    <div style="font-size: 12px;">'.date("Y-m-d H:i:s", $t).'</div>
+                                    <div style="font-size: 12px;">от '.date("Y-m-d H:i:s", $t).'</div>
                                  </div>
                             </div>
                             <div style="margin: 30px 0;">';

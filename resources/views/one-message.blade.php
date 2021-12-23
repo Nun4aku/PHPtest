@@ -10,13 +10,23 @@
 @section('content')
     <h2 class="h2Main">Одна паста</h2>
     <div class="alert alert-info">
-        <h4>{{ $data3->title }}</h4>
-        <div>Автор:
-            @if(empty($data3->autor_name))
-                гость
-            @else
-                {{ $data3->autor_name }}
-            @endif
+        <div class="pastsDate">
+            <h4>{{ $data3->title }}</h4>
+            <div style="font-size: 12px;">
+                <div>Автор:
+                    @if(empty($data3->autor_name))
+                        гость
+                    @else
+                        {{ $data3->autor_name }}
+                    @endif
+                </div>
+                <div>
+                    <?php
+                    $t = $data3['publ_data'];
+                    echo 'от '.date("Y-m-d H:i:s", $t);
+                    ?>
+                </div>
+            </div>
         </div>
         <div style="margin: 30px 0;">
             <?php
@@ -28,15 +38,7 @@
                 }
             ?>
         </div>
-        <div class="pastsDate">
-            <div>
-                <?php
-                $t = $data3['publ_data'];
-                echo date("Y-m-d H:i:s", $t);
-                ?>
-            </div>
-            <!--<a href="{{ route('contact-data-one', $data3->id) }}"><botton class="btn btn-outline-success">Посмотреть</botton></a>-->
-        </div>
+
 
     </div>
 @endsection

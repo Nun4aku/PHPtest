@@ -14,7 +14,7 @@
                 <div>
                     <?php
                     $t = $al['publ_data'];
-                    echo date("Y-m-d H:i:s", $t);
+                    echo 'от '.date("Y-m-d H:i:s", $t);
                     ?>
                 </div>
             </div>

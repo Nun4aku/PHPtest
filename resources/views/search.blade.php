@@ -7,13 +7,23 @@
     @foreach($data2 as $al)
         <div class="alert alert-info">
 
-            <h4>{{ $al->title }}</h4>
-            <div>Автор:
-                @if(empty($al->autor_name))
-                    гость
-                @else
-                    {{ $al->autor_name }}
-                @endif
+            <div class="pastsDate">
+                <h4>{{ $al->title }}</h4>
+                <div style="font-size: 12px;">
+                    <div>Автор:
+                        @if(empty($al->autor_name))
+                            гость
+                        @else
+                            {{ $al->autor_name }}
+                        @endif
+                    </div>
+                    <div>
+                        <?php
+                        $t = $al['publ_data'];
+                        echo 'от '.date("Y-m-d H:i:s", $t);
+                        ?>
+                    </div>
+                </div>
             </div>
             <div style="margin: 30px 0;">
                 <?php
@@ -26,12 +36,6 @@
                 ?>
             </div>
             <div class="pastsDate">
-                <div>
-                    <?php
-                    $t = $al['publ_data'];
-                    echo date("Y-m-d H:i:s", $t);
-                    ?>
-                </div>
                 <a href="{{ route('contact-data-one', $al->id) }}"><botton class="btn btn-outline-success">Посмотреть</botton></a>
             </div>
             <!-- <a href="#"><botton class="btn btn-success">Посмотреть</botton></a> -->

@@ -24,13 +24,14 @@ class SearchRequest extends FormRequest
     public function rules()
     {
         return [
+            'search' => 'required'
 
         ];
     }
 
     public function messages() {
         return [
-
+            'search.required' => 'Зачем искать пустоту? Введите название пасты для поиска'
         ];
     }
 }

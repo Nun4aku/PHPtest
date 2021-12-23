@@ -24,7 +24,7 @@ class SearchController extends Controller {
             ['data' => $contact->where('access', '=', 'public')
                 ->where('lifetime', '>', time())
                 ->orderBY('publ_data', 'desc')
-                ->take(10)->get()]);
+                ->get()]);
 
     }
 }
