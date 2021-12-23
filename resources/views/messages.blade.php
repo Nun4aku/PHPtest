@@ -3,7 +3,7 @@
 @section('title-block')Все пасты@endsection
 
 @section('content')
-    <h2 class="h2Main">Добаить пасту</h2>
+    <h2 class="h2Main">Добавить пасту</h2>
     <form style="width: 100%; margin-top: -47px;" action="{{ route('contact-form') }}" method="post">
         <div class="form-group">
             @csrf
@@ -11,6 +11,7 @@
             <input name="title" id="title" class="form-control" placeholder="Введите название пасты" rows="3"></input>
             <br>
             <textarea name="pasta" id="pasta" class="form-control" placeholder="Введите пасту" rows="7"></textarea>
+            <div style="color: #b4b8bb;">В пасте должно быть от 1 до 1000 символов</div>
             <label for="access" style="padding: 30px 0 5px;">Приватность</label>
             <select name="access" id="acces" class="form-select" style="width: 100%;">
                 <option value="public" selected>Видна всем</option>

@@ -10,4 +10,8 @@ body {
     padding: 25px 0;
     font-weight: 300;
 }
-
+.user_login{
+    margin: auto;
+    border: solid 5px #d1e7dd;
+    padding: 0 30px;
+}

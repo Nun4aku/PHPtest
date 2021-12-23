@@ -25,15 +25,16 @@ class ContactRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'pasta' => 'required'
+            'pasta' => 'required|digits_between:1,1000'
 
         ];
     }
 
     public function messages() {
         return [
-            'title.required' => 'Введите Заголовок',
-            'pasta.required' => 'Введите пасту'
+            'title.required' => 'Введите заголовок',
+            'pasta.required' => 'Введите пасту',
+            'pasta.digits_between' => 'В пасте должно быть от 1 до 1000 символов'
         ];
     }
 }

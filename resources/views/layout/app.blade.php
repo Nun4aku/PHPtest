@@ -16,15 +16,6 @@
     @include('inc.header')
 
     <div class="container">
-
-        @if (Auth::check())
-            <?php $user = Auth::user(); ?>
-
-            <div class="alert alert-success" style="display: flex; justify-content: space-between;align-items: center">
-                <div>Вы вошли как:  <?=$user['name'];?></div>
-            </div>
-        @endif
-
         <form method="get" action="{{ route('search') }}">
             <div class="input-group">
                 <input id="search" name="search"
