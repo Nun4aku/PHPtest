@@ -8,9 +8,16 @@
 
 
 @section('content')
-    <h2 class="h2">Одна паста</h2>
+    <h2 class="h2Main">Одна паста</h2>
     <div class="alert alert-info">
         <h4>{{ $data3->title }}</h4>
+        <div>Автор:
+            @if(empty($data3->autor_name))
+                гость
+            @else
+                {{ $data3->autor_name }}
+            @endif
+        </div>
         <div style="margin: 30px 0;">
             <?php
                 $syntax = $data3->syntax;

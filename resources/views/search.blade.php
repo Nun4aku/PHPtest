@@ -3,11 +3,18 @@
 @section('title-block')Все пасты@endsection
 
 @section('content')
-    <h2>Результаты поиска</h2>
+    <h2 class="h2Main">Результаты поиска</h2>
     @foreach($data2 as $al)
         <div class="alert alert-info">
 
             <h4>{{ $al->title }}</h4>
+            <div>Автор:
+                @if(empty($al->autor_name))
+                    гость
+                @else
+                    {{ $al->autor_name }}
+                @endif
+            </div>
             <div style="margin: 30px 0;">
                 <?php
                     $syntax = $al->syntax;

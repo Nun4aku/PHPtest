@@ -4,9 +4,7 @@
 
 @section('content')
 
-
-
-    <h2>Добаить пасту</h2>
+    <h2 class="h2Main">Добаить пасту</h2>
     <form style="width: 100%;" action="{{ route('contact-form') }}" method="post">
         <div class="form-group">
             @csrf

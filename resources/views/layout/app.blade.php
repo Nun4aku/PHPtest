@@ -21,7 +21,7 @@
             <?php $user = Auth::user(); ?>
 
             <div class="alert alert-success" style="display: flex; justify-content: space-between;align-items: center">
-                <div>Привет, <?=$user['name'];?></div>
+                <div>Вы вошли как:  <?=$user['name'];?></div>
             </div>
         @endif
 

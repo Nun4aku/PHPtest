@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller {
     public function submit (ContactRequest $req) {
@@ -29,6 +30,7 @@ class ContactController extends Controller {
         $contact->lifetime = $lifetime;
         $contact->syntax = $req->input('syntax');
         $contact->autor = $req->input('autor');
+        $contact->autor_name = $req->input('autor_name');
 
         $contact->save();
 
@@ -63,15 +65,16 @@ class ContactController extends Controller {
             ['data' => $contact->where('access', '=', 'public')
             ->where('lifetime', '>', time())
             ->orderBY('publ_data', 'desc')
-            ->take(10)->get()]);
+            ->get()]);
     }
+
     public function showOneMessage($id){
         $contact = new Contact();
         return view('one-message', ['data3' => $contact->find($id)],
             ['data' => $contact->where('access', '=', 'public')
                 ->where('lifetime', '>', time())
                 ->orderBY('publ_data', 'desc')
-                ->take(10)->get()]
+                ->get()]
         );
     }
 
@@ -80,8 +83,20 @@ class ContactController extends Controller {
 
         return view('user', ['your_data' => $contact->where('autor', '=', $autor)
             ->orderBY('publ_data', 'desc')
-            ->get()]);
+            ->take(10)->get()]);
     }
 
+    public function privateSubmit($id) {
+        DB::table('contacts')
+            ->where('id', '=', $id)
+            ->update(['access' => 'unlisted']);
+        return redirect()->route('home')->with('success', 'Запись №'.$id.' сделана приватной');
+    }
+    public function publicSubmit($id) {
+        DB::table('contacts')
+            ->where('id', '=', $id)
+            ->update(['access' => 'public']);
+        return redirect()->route('home')->with('success', 'Запись №'.$id.' доступна всем');
+    }
 
 }

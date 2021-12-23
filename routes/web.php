@@ -33,3 +33,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+
+Route::get('/home/private/{id}', '\App\Http\Controllers\ContactController@privateSubmit')->name('contact-update-submit');
+Route::get('/home/public/{id}', '\App\Http\Controllers\ContactController@publicSubmit')->name('contact-update-submit');
+

@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title-block')Все пасты@endsection
+@section('title-block')Личный кабинет@endsection
 
 @section('content')
     @include('inc.allYourPasts')
@@ -12,7 +12,7 @@
         $user = Auth::user();
         $your_pasts = DB::table('contacts')->where('autor', '=', $user['id'])->where('access', '=', 'unlisted')->take(10)->get();
 
-        echo '<h2 class="h2">Ваши приватные пасты</h2>';
+        echo '<h2 class="h2Main">Ваши приватные пасты</h2>';
 
         if (count($your_pasts)) {
             foreach ($your_pasts as $your_one_past){
