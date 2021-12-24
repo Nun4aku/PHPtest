@@ -1,7 +1,7 @@
 @if (Auth::check())
     <?php
     $user = Auth::user();
-    $your_pasts = DB::table('contacts')->where('autor', '=', $user['id'])->take(10)->get();
+    $your_pasts = DB::table('contacts')->where('autor', '=', $user['id'])->orderBY('publ_data', 'desc')->take(10)->get();
 
     echo '<h2 class="h2Main">10 последних ваших паст</h2>';
 

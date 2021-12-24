@@ -6,5 +6,6 @@
 	php composer-setup.php
 	php -r "unlink('composer-setup.php');"
 4. Установить Ларавел командой php composer.phar global require "laravel/installer
-5. Запустить php artisan serve, Если ошибка про Вендер, то composer update --no-scripts, потом php artisan serve
+5. composer update или composer update --no-scripts
+5. Запустить php artisan serve
 6. npm run dev
