@@ -92,6 +92,7 @@ class ContactController extends Controller {
             ->update(['access' => 'unlisted']);
         return redirect()->route('home')->with('success', 'Запись №'.$id.' сделана приватной');
     }
+
     public function publicSubmit($id) {
         DB::table('contacts')
             ->where('id', '=', $id)
@@ -99,4 +100,10 @@ class ContactController extends Controller {
         return redirect()->route('home')->with('success', 'Запись №'.$id.' доступна всем');
     }
 
+    public function pagination($autor) {
+        $contact = new Contact();
+        return view('pagination', ['all_your_data' => $contact->where('autor', '=', $autor)
+            ->orderBY('publ_data', 'desc')
+            ->SimplePaginate(3)]);
+    }
 }

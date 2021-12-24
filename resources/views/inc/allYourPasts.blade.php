@@ -63,6 +63,7 @@
     }
     ?>
 @endif
+
 <script>
     $('#btn-tooltip').tooltip();
 </script>

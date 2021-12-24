@@ -4,7 +4,7 @@
 
 @section('content')
     <h2 class="h2Main">Результаты поиска</h2>
-    @foreach($data2 as $al)
+     @foreach($data2 as $al)
         <div class="alert alert-info">
 
             <div class="pastsDate">
@@ -43,7 +43,6 @@
         </div>
 
     @endforeach
-
 @endsection
 
 @section('aside')

@@ -11,6 +11,7 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="{{ route('login') }}">Личный кабинет</a></li>
+                    <li><a class="dropdown-item" href="{{ route('pagination', $user['id']) }}">Все мои пасты</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="{{ route('logout') }}">Выход</a></li>
                 </ul>
