@@ -1,4 +1,4 @@
-<h2 class="h2Main">Последние пасты пользователей</h2>
+<h2 class="h2Main">Последние public пасты пользователей</h2>
 @foreach($data as $al)
     <div class="alert alert-success">
         <div class="pastsDate">

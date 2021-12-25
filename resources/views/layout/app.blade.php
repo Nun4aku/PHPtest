@@ -35,6 +35,11 @@
                 @include('inc.aside')
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-lg-4 p-md-3 p-sm-3 p-xs-2">
+                @yield('content2')
+            </div>
+        </div>
     </div>
 
 

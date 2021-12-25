@@ -3,9 +3,12 @@
 
     @section('title-block')Все пасты пользователя@endsection
 
-    @section('content')
+    @section('content2')
 
             <h2 class="h2Main">Все ваши пасты</h2>
+            <div style="margin-bottom: 35px;">
+                На этой странице вы видите все свои пасты с пагинацией по 3 шт.
+            </div>
             <table class="table">
                 <thead>
                 <tr>
@@ -30,15 +33,13 @@
                 </tbody>
 
             </table>
-            {{ $all_your_data-> links() }}
+            <div style="text-align: center;margin: 35px 0;">
+                {{ $all_your_data-> links() }}
+            </div>
+
 
     @endsection
 
-    @section('aside')
-        <div style="margin: auto; padding: 200px 50px;">
-            На этой странице вы видите все свои пасты с пагинацией по 3 шт.
-        </div>
-    @endsection
 @else
     <?php header('Location: /'); exit(); ?>
 @endif
