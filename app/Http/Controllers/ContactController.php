@@ -38,7 +38,7 @@ class ContactController extends Controller {
             $mes = 'Паста была добавлена';
         }else{
             $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'];
-            $link = $url.'/contact/one?hash='.$hash;
+            $link = $url.'/private/'.$hash;
             //$mes = '<a href="'.$link.'">'.$link.'</a>' ;
             $mes = $link ;
         }
@@ -55,6 +55,16 @@ class ContactController extends Controller {
                                                         ->where('lifetime', '>', time())
                                                         ->orderBY('publ_data', 'desc')
                                                         ->take(10)->get()]);
+    }
+
+
+    public function one_privateData($hash) {
+        $contact = new Contact();
+        return view('one', ['data2' => $contact->where('hash', '=', $hash)->get()],
+            ['data' => $contact->where('access', '=', 'public')
+                ->where('lifetime', '>', time())
+                ->orderBY('publ_data', 'desc')
+                ->get()]);
     }
 
     public function oneData() {

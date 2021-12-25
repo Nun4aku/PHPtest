@@ -10,14 +10,14 @@
     @if (Auth::check())
         <?php
         $user = Auth::user();
-        $your_pasts = DB::table('contacts')->where('autor', '=', $user['id'])->where('access', '=', 'unlisted')->take(10)->get();
+        $your_pasts = DB::table('contacts')->where('autor', '=', $user['id'])->where('access', '=', 'unlisted')->orderBY('publ_data', 'desc')->take(10)->get();
 
         echo '<h2 class="h2Main">Ваши приватные пасты</h2>';
 
         if (count($your_pasts)) {
             foreach ($your_pasts as $your_one_past){
                 $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'];
-                $link = $url.'/contact/one?hash='.$your_one_past->hash;
+                $link = $url.'/private/'.$your_one_past->hash;
                 $t = $your_one_past->publ_data;
                 echo '
                         <div class="alert alert-success">

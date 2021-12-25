@@ -14,15 +14,17 @@
                                 <h4>'.$your_one_past->title.'</h4>';
 
                                 if($your_one_past->access == 'public'){
+                                    $color = '#00c70f';
                                     $pablic_or_private = 'Доступна всем';
                                 }else{
+                                    $color = '#ff0018';
                                     $pablic_or_private = 'Приватная запись';
                                 }
                                 $t = $your_one_past->publ_data;
             echo'
                                 <div>
-                                    <div style="font-size: 12px;">'.$pablic_or_private.'</div>
-                                    <div style="font-size: 12px;">от '.date("Y-m-d H:i:s", $t).'</div>
+                                    <div style="text-align: right; font-size: 12px; color: '.$color.';">'.$pablic_or_private.'</div>
+                                    <div style="text-align: right; font-size: 12px;">от '.date("Y-m-d H:i:s", $t).'</div>
                                  </div>
                             </div>
                             <div style="margin: 30px 0;">';

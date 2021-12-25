@@ -20,6 +20,7 @@ Route::get('/contact', function () {
 Route::get('/contact/one', '\App\Http\Controllers\ContactController@oneData')->name('contact-One-data');
 
 Route::get('/one/{hash}', '\App\Http\Controllers\ContactController@showOneMessage')->name('contact-data-one');
+Route::get('/private/{hash}', '\App\Http\Controllers\ContactController@one_privateData')->name('pivate-date');
 
 Route::get('/', '\App\Http\Controllers\ContactController@allData')->name('contact-data');
 Route::post('/contact/submit', '\App\Http\Controllers\ContactController@submit')->name('contact-form');
