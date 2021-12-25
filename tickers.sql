@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 23 2021 г., 15:37
--- Версия сервера: 10.3.13-MariaDB-log
--- Версия PHP: 7.2.22
+-- Время создания: Дек 25 2021 г., 11:36
+-- Версия сервера: 10.3.22-MariaDB
+-- Версия PHP: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -75,7 +74,10 @@ INSERT INTO `contacts` (`id`, `pasta`, `access`, `lifetime`, `publ_data`, `hash`
 (79, 'Приват', 'unlisted', 1640255757, 1640244957, 'cd97b2c82ac93b2361e8332cccf9b183', '2021-12-23 00:35:57', '2021-12-23 00:35:57', 'Приват', NULL, '3', 'Чак Норрис'),
 (80, 'Улицу им. Чака Норриса пришлось переименовать т. к. никто не хотел переходить дорогу.', 'public', 2147483647, 1640246795, 'da126bf7c0abc8b9e9a7b442763b1bf7', '2021-12-23 01:06:35', '2021-12-23 01:06:35', 'Про мою улицу', NULL, '3', 'Чак Норрис'),
 (81, 'Таксист, подвозивший Чака Норриса, всё таки намазал спасибо на хлеб!', 'public', 2147483647, 1640246896, '0a9357df01c6bfc2307dd346161ef2b4', '2021-12-23 01:08:16', '2021-12-23 01:08:16', 'ЯндексТакси', NULL, '3', 'Чак Норрис'),
-(82, 'function addEvent(elm, evType, fn, useCapture) {\r\n        if (elm.addEventListener) {\r\n                elm.addEventListener(evType, fn, useCapture);\r\n        return true;\r\n        }\r\n        else if (elm.attachEvent) {\r\n                var r = elm.attachEvent(\'on\' + evType, fn);\r\n                return r;\r\n        }\r\n        else {\r\n                elm[\'on\' + evType] = fn;\r\n        }\r\n}', 'public', 2147483647, 1640248679, '14c9ac7838e5332643907001bba00cd6', '2021-12-23 01:37:59', '2021-12-23 01:37:59', 'JS функция addEvent() от Скота Эндрю', 'javascript', NULL, NULL);
+(82, 'function addEvent(elm, evType, fn, useCapture) {\r\n        if (elm.addEventListener) {\r\n                elm.addEventListener(evType, fn, useCapture);\r\n        return true;\r\n        }\r\n        else if (elm.attachEvent) {\r\n                var r = elm.attachEvent(\'on\' + evType, fn);\r\n                return r;\r\n        }\r\n        else {\r\n                elm[\'on\' + evType] = fn;\r\n        }\r\n}', 'public', 2147483647, 1640248679, '14c9ac7838e5332643907001bba00cd6', '2021-12-23 01:37:59', '2021-12-23 01:37:59', 'JS функция addEvent() от Скота Эндрю', 'javascript', NULL, NULL),
+(88, '12', 'public', 1640332543, 1640331943, 'e44768fd7f561f0e64a1d13b737a3395', '2021-12-24 00:45:43', '2021-12-24 00:45:43', 'q', NULL, '3', 'Чак Норрис'),
+(89, '1', 'public', 1640418931, 1640418331, '07e7d359fb1665791f6e719888fc7eb5', '2021-12-25 00:45:31', '2021-12-25 00:45:31', '1', NULL, '6', 'test'),
+(90, '2', 'public', 1640420251, 1640419651, 'a5dcc4a40ae6b8650057c1e6aedecff0', '2021-12-25 01:07:31', '2021-12-25 01:07:31', '2', NULL, '6', 'test');
 
 -- --------------------------------------------------------
 
@@ -267,7 +269,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (3, 'Чак Норрис', 'kleshnevdmitry@rambler.ru', NULL, '$2y$10$63QSIID3sERgmJz0GAZjp.1aS6jdMmk645Ek/gQQaGzuWqBHS5UyC', NULL, '2021-12-21 21:49:08', '2021-12-21 21:49:08'),
-(4, 'Vasya', 'gowotmods@gmail.com', NULL, '$2y$10$/jXVBswUj.KElgKyHF11zO.poIyYDLkhZkFMVk26tDL7d95ZI25E6', NULL, '2021-12-22 00:55:47', '2021-12-22 00:55:47');
+(4, 'Vasya', 'gowotmods@gmail.com', NULL, '$2y$10$/jXVBswUj.KElgKyHF11zO.poIyYDLkhZkFMVk26tDL7d95ZI25E6', NULL, '2021-12-22 00:55:47', '2021-12-22 00:55:47'),
+(5, 'Prof. Earline Herzog', 'taryn.grady@example.org', '2021-12-25 00:03:47', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'akJqZTsngK', '2021-12-25 00:03:47', '2021-12-25 00:03:47'),
+(6, 'test', 'test@test.ru', NULL, '$2y$10$V6BlrMWsyJsrD.q7/gIpOeeFRvsayU0yeXoAEgt.gp7Jri9TUNaCm', NULL, '2021-12-25 00:31:40', '2021-12-25 00:31:40');
 
 -- --------------------------------------------------------
 
@@ -378,7 +382,7 @@ ALTER TABLE `vse42`
 -- AUTO_INCREMENT для таблицы `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT для таблицы `failed_jobs`
@@ -414,7 +418,7 @@ ALTER TABLE `tickers`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `vse42`

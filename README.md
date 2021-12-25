@@ -7,5 +7,6 @@
 	php -r "unlink('composer-setup.php');"
 4. Установить Ларавел командой php composer.phar global require "laravel/installer
 5. composer update или composer update --no-scripts
-5. Запустить php artisan serve
-6. npm run dev
+6. в PHPMyAdmin создать таблицу tickers и импортировать в нее tickers.sql
+7. Запустить php artisan serve
+8. npm run dev
