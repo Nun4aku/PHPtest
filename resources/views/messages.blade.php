@@ -36,7 +36,7 @@
             <br><br>
 
             <div style="display: flex;">
-                <button class="btn btn-success" type="submit">Добавить</button>
+                <button class="btn btn-success" type="submit" name="add">Добавить</button>
             </div>
             <BR>
             <div class="all_active_subs_new"></div>
